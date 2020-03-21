@@ -1,9 +1,6 @@
 
 /**
- * Write a description of class GameBoard here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Data structure that maintains the location of each Piece in the game.
  */
 public class GameBoard
 {

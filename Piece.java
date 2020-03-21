@@ -1,9 +1,7 @@
 
 /**
- * Write a description of interface Piece here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Interface to define operations for all pieces. Implemented by each type of
+ * chess piece.
  */
 public interface Piece
 {

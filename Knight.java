@@ -1,11 +1,8 @@
 
 /**
- * Write a description of class Knight here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Defines data members and methods of each knight piece.
  */
-public class Knight
+public class Knight implements Piece
 {
     // instance variables - replace the example below with your own
     private int x;

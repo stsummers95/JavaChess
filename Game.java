@@ -1,9 +1,7 @@
 
 /**
- * Write a description of class Game here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Performs basic actions of game play including taking turns, checking for
+ * checkmate conditions, and allowing a player to move.
  */
 public class Game
 {

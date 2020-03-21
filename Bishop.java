@@ -1,11 +1,8 @@
 
 /**
- * Write a description of class Bishop here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Defines data members and methods of each bishop piece.
  */
-public class Bishop
+public class Bishop implements Piece
 {
     // instance variables - replace the example below with your own
     private int x;

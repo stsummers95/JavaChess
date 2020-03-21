@@ -1,11 +1,8 @@
 
 /**
- * Write a description of class Rook here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Defines data members and methods of each rook piece.
  */
-public class Rook
+public class Rook implements Piece
 {
     // instance variables - replace the example below with your own
     private int x;

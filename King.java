@@ -1,11 +1,8 @@
 
 /**
- * Write a description of class King here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Defines data members and methods of each king piece.
  */
-public class King
+public class King implements Piece
 {
     // instance variables - replace the example below with your own
     private int x;
