@@ -9,6 +9,7 @@ public class Class1
         if(true)
         {
             System.out.println("It's true.");
+            System.out.println("It's not false.");
         }
     }
 }
