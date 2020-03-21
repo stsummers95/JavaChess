@@ -1,30 +1,25 @@
+import java.util.ArrayList;
 
 /**
  * Defines data members and methods of each rook piece.
  */
 public class Rook implements Piece
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
      * Constructor for objects of class Rook
      */
     public Rook()
     {
-        // initialise instance variables
-        x = 0;
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public ArrayList<Integer> getAvailableMoves()
     {
-        // put your code here
-        return x + y;
+        return null;
+    }
+
+    public ArrayList<Integer> getAvailableCaptures()
+    {
+        return null;
     }
 }
