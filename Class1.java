@@ -5,5 +5,10 @@ public class Class1
     System.out.println("This is a test.");
     System.out.println("Stephen stinks at Civ VI");
     System.out.println("Stephen is a noob");
+    
+    if(true)
+    {
+        System.out.println("It's true.");
+    }
   }
 }
