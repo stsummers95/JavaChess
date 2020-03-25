@@ -3,22 +3,22 @@ import java.util.ArrayList;
 /**
  * Defines data members and methods of each pawn piece.
  */
-public class King implements Piece
+public class King extends Piece
 {
-        /**
+    /**
      * Constructor for objects of class King
      */
-    public King()
+    public King(String color)
     {
-
+        super(color);
     }
 
-    public ArrayList<Integer> getAvailableMoves()
+    public ArrayList<Square> getAvailableMoves()
     {
         return null;
     }
 
-    public ArrayList<Integer> getAvailableCaptures()
+    public ArrayList<Square> getAvailableCaptures()
     {
         return null;
     }

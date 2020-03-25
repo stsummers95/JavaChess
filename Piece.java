@@ -4,11 +4,16 @@ import java.util.ArrayList;
  * Interface to define operations for all pieces. Implemented by each type of
  * chess piece.
  */
-public interface Piece
+public abstract class Piece
 {
-    String color = "white"; // fix to set color on constructor
+    String color; // fix to set color on constructor
     
-    public ArrayList<Integer> getAvailableMoves();
+    public Piece(String color)
+    {
+        this.color = color;
+    }
     
-    public ArrayList<Integer> getAvailableCaptures();
+    public abstract ArrayList<Square> getAvailableMoves();
+    
+    public abstract ArrayList<Square> getAvailableCaptures();
 }

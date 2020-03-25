@@ -5,12 +5,14 @@
  */
 public class Game
 {
+    GameBoard board;
+    
     /**
      * Constructor for objects of class Game
      */
     public Game()
     {
-        
+        board = new GameBoard();
     }
     
     //white player turn
