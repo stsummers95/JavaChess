@@ -13,9 +13,26 @@ public class Knight extends Piece
         super(color);
     }
 
-    public ArrayList<Square> getAvailableMoves()
+    public ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b)
     {
-        return null;
+        ArrayList<Square> moves = new ArrayList<Square>();
+        
+        //up two, right one
+        
+        //up two, left one
+        
+        //down two, right one
+        
+        //down two, left one
+        
+        //right two, up one
+        
+        //right two, down one
+        
+        //left two, up one
+        
+        //left two, down one
+        return moves;
     }
 
     public ArrayList<Square> getAvailableCaptures()

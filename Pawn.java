@@ -12,10 +12,18 @@ public class Pawn extends Piece
     {
         super(color);
     }
-
-    public ArrayList<Square> getAvailableMoves()
+    
+    public ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b)
     {
-        return null;
+        ArrayList<Square> moves = new ArrayList<Square>();
+        
+        //up one
+        
+        //up two (if hasn't moved)
+        
+        //en passant
+        
+        return moves;
     }
 
     public ArrayList<Square> getAvailableCaptures()

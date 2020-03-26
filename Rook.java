@@ -13,9 +13,19 @@ public class Rook extends Piece
         super(color);
     }
 
-    public ArrayList<Square> getAvailableMoves()
+    public ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b)
     {
-        return null;
+        ArrayList<Square> moves = new ArrayList<Square>();
+        
+        //up
+        
+        //down
+        
+        //left
+        
+        //right
+        
+        return moves;
     }
 
     public ArrayList<Square> getAvailableCaptures()

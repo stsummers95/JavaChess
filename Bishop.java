@@ -13,9 +13,19 @@ public class Bishop extends Piece
         super(color);
     }
 
-    public ArrayList<Square> getAvailableMoves()
+    public ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b)
     {
-        return null;
+        ArrayList<Square> moves = new ArrayList<Square>();
+        
+        //upper left
+        
+        //upper right
+        
+        //bottom left
+        
+        //bottom right
+        
+        return moves;
     }
 
     public ArrayList<Square> getAvailableCaptures()

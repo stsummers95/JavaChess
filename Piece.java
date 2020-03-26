@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Interface to define operations for all pieces. Implemented by each type of
+ * SuperClass to define operations for all pieces. Implemented by each type of
  * chess piece.
  */
 public abstract class Piece
@@ -13,7 +13,7 @@ public abstract class Piece
         this.color = color;
     }
     
-    public abstract ArrayList<Square> getAvailableMoves();
+    public abstract ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b);
     
     public abstract ArrayList<Square> getAvailableCaptures();
 }

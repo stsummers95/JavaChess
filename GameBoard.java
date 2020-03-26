@@ -6,6 +6,7 @@ public class GameBoard
 {
     private Square[][] board;
     private String[] fileNames = {"a", "b", "c", "d", "e", "f", "g", "h"};
+    
     //bottom pieces
     Rook bottomLeftRook;
     Knight bottomLeftKnight;
@@ -60,13 +61,14 @@ public class GameBoard
     public GameBoard()
     {
         board = new Square[8][8];
-        for(int i = 7; i >= 0; i--)
+        for(int i = 8; i >= 1; i--)
         {
             for(int j = 0; j < 8; j++)
             {
                 board[i][j] = new Square(i, fileNames[j]);
             }
         }
+        
         //set bottom pieces
         bottomLeftRook = new Rook("white");
         board[7][0].setPiece(bottomLeftRook);
@@ -169,5 +171,60 @@ public class GameBoard
     public Piece getPieceAt(int rank, int file)
     {
         return null;
+    }
+    
+    public Square getSquareAbove(Square s){
+        int r = s.getRank();
+        int f = getFileNamesIndex(s.getFile());
+        
+        return board[r + 1][f];
+    }
+    
+    public Square getSquareBelow(Square s){
+        int r = s.getRank();
+        int f = getFileNamesIndex(s.getFile());
+        
+        return board[r - 1][f];
+    }
+    
+    public Square getSquareLeft(Square s){
+        int r = s.getRank();
+        int f = getFileNamesIndex(s.getFile());
+        
+        return board[r][f - 1];
+    }
+    
+    public Square getSquareRight(Square s){
+        int r = s.getRank();
+        int f = getFileNamesIndex(s.getFile());
+        
+        return board[r][f + 1];
+    }
+    
+    public int getFileNamesIndex(String f){
+        if(f.equals("a")){
+            return 0;
+        }
+        else if(f.equals("b")){
+            return 1;
+        }
+        else if(f.equals("c")){
+            return 2;
+        }
+        else if(f.equals("d")){
+            return 3;
+        }
+        else if(f.equals("e")){
+            return 4;
+        }
+        else if(f.equals("f")){
+            return 5;
+        }
+        else if(f.equals("g")){
+            return 6;
+        }
+        else{
+            return 7;
+        }
     }
 }

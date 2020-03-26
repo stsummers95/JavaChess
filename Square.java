@@ -21,12 +21,20 @@ public class Square
     {
         this.piece = piece;
     }
-    
+
     /**
      * 
      */
     public boolean containsPiece()
     {
         return (piece != null);
+    }
+
+    public int getRank(){
+        return rank;
+    }
+
+    public String getFile(){
+        return file;
     }
 }
