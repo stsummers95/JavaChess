@@ -61,7 +61,7 @@ public class GameBoard
     public GameBoard()
     {
         board = new Square[8][8];
-        for(int i = 8; i >= 1; i--)
+        for(int i = 7; i >= 0; i--)
         {
             for(int j = 0; j < 8; j++)
             {
@@ -174,31 +174,59 @@ public class GameBoard
     }
     
     public Square getSquareAbove(Square s){
-        int r = s.getRank();
-        int f = getFileNamesIndex(s.getFile());
+        int row = 8 - s.getRank();
+        int col = getFileNamesIndex(s.getFile());
         
-        return board[r + 1][f];
+        if(row - 1 >= 0)
+        {
+            return board[row - 1][col];
+        }
+        else
+        {
+            return null;
+        }
     }
     
     public Square getSquareBelow(Square s){
-        int r = s.getRank();
-        int f = getFileNamesIndex(s.getFile());
+        int row = 8 - s.getRank();
+        int col = getFileNamesIndex(s.getFile());
         
-        return board[r - 1][f];
+        if(row + 1 < 8)
+        {
+            return board[row + 1][col];
+        }
+        else
+        {
+            return null;
+        }
     }
     
     public Square getSquareLeft(Square s){
-        int r = s.getRank();
-        int f = getFileNamesIndex(s.getFile());
+        int row = 8 - s.getRank();
+        int col = getFileNamesIndex(s.getFile());
         
-        return board[r][f - 1];
+        if(col - 1 >= 0)
+        {
+            return board[row][col - 1];
+        }
+        else
+        {
+            return null;
+        }
     }
     
     public Square getSquareRight(Square s){
-        int r = s.getRank();
-        int f = getFileNamesIndex(s.getFile());
+        int row = 8 - s.getRank();
+        int col = getFileNamesIndex(s.getFile());
         
-        return board[r][f + 1];
+        if(col + 1 < 8)
+        {
+            return board[row][col + 1];
+        }
+        else
+        {
+            return null;
+        }
     }
     
     public int getFileNamesIndex(String f){
