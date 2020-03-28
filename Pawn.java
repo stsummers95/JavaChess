@@ -21,19 +21,12 @@ public class Pawn extends Piece
         ArrayList<Square> moves = new ArrayList<Square>();
 
         //up one
-        if(!b.getSquareAbove(s).containsPiece()){
+        if(b.getSquareAbove(s) != null && !b.getSquareAbove(s).containsPiece()){
             moves.add(b.getSquareAbove(s));
             
             //up two(if hasn't moved)
             if(isFirstMove && !b.getSquareAbove(moves.get(0)).containsPiece()){
                 moves.add(b.getSquareAbove(moves.get(0)));
-            }
-        }
-        
-        for(int i = 0; i < moves.size(); i++){
-            if(moves.get(i) == null){
-                moves.remove(moves.get(i));
-                i--;
             }
         }
 

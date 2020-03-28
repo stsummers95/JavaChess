@@ -21,12 +21,12 @@ public class Knight extends Piece
         Square up1 = b.getSquareAbove(s);
         Square up2 = b.getSquareAbove(up1);
 
-        if(!b.getSquareRight(up2).containsPiece()){
+        if(b.getSquareRight(up2) != null && !b.getSquareRight(up2).containsPiece()){
             moves.add(b.getSquareRight(up2));
         }
 
         //up two, left one
-        if(!b.getSquareLeft(up2).containsPiece()){
+        if(b.getSquareLeft(up2) != null && !b.getSquareLeft(up2).containsPiece()){
             moves.add(b.getSquareLeft(up2));
         }
 
@@ -34,12 +34,12 @@ public class Knight extends Piece
         Square down1 = b.getSquareBelow(s);
         Square down2 = b.getSquareBelow(down1);
 
-        if(!b.getSquareRight(down2).containsPiece()){
+        if(b.getSquareRight(down2) != null && !b.getSquareRight(down2).containsPiece()){
             moves.add(b.getSquareRight(down2));
         }
 
         //down two, left one
-        if(!b.getSquareLeft(down2).containsPiece()){
+        if(b.getSquareLeft(down2) != null && !b.getSquareLeft(down2).containsPiece()){
             moves.add(b.getSquareLeft(down2));
         }
 
@@ -47,12 +47,12 @@ public class Knight extends Piece
         Square right1 = b.getSquareRight(s);
         Square right2 = b.getSquareRight(right1);
 
-        if(!b.getSquareAbove(right2).containsPiece()){
+        if(b.getSquareAbove(right2) != null && !b.getSquareAbove(right2).containsPiece()){
             moves.add(b.getSquareAbove(right2));
         }
 
         //right two, down one
-        if(!b.getSquareBelow(right2).containsPiece()){
+        if(b.getSquareBelow(right2) != null && !b.getSquareBelow(right2).containsPiece()){
             moves.add(b.getSquareBelow(right2));
         }
 
@@ -60,20 +60,13 @@ public class Knight extends Piece
         Square left1 = b.getSquareLeft(s);
         Square left2 = b.getSquareLeft(left1);
 
-        if(!b.getSquareAbove(left2).containsPiece()){
+        if(b.getSquareAbove(left2) != null && !b.getSquareAbove(left2).containsPiece()){
             moves.add(b.getSquareAbove(left2));
         }
 
         //left two, down one
-        if(!b.getSquareBelow(left2).containsPiece()){
+        if(b.getSquareBelow(left2) != null && !b.getSquareBelow(left2).containsPiece()){
             moves.add(b.getSquareBelow(left2));
-        }
-        
-        for(int i = 0; i < moves.size(); i++){
-            if(moves.get(i) == null){
-                moves.remove(moves.get(i));
-                i--;
-            }
         }
 
         return moves;

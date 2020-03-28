@@ -22,7 +22,7 @@ public class Queen extends Piece
         while(true){
             Square up = b.getSquareAbove(previous);
             
-            if(up.containsPiece() || up == null){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -35,7 +35,7 @@ public class Queen extends Piece
         while(true){
             Square down = b.getSquareBelow(previous);
             
-            if(down.containsPiece() || down == null){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
@@ -48,7 +48,7 @@ public class Queen extends Piece
         while(true){
             Square left = b.getSquareLeft(previous);
             
-            if(left.containsPiece() || left == null){
+            if(left == null || left.containsPiece()){
                 break;
             }
             
@@ -61,7 +61,7 @@ public class Queen extends Piece
         while(true){
             Square right = b.getSquareRight(previous);
             
-            if(right.containsPiece() || right == null){
+            if(right == null || right.containsPiece()){
                 break;
             }
             
@@ -75,7 +75,7 @@ public class Queen extends Piece
             Square left = b.getSquareLeft(previous);
             Square up = b.getSquareAbove(left);
             
-            if(up.containsPiece() || up == null){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -89,7 +89,7 @@ public class Queen extends Piece
             Square right = b.getSquareRight(previous);
             Square up = b.getSquareAbove(right);
             
-            if(up.containsPiece() || up == null){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -103,7 +103,7 @@ public class Queen extends Piece
             Square left = b.getSquareLeft(s);
             Square down = b.getSquareBelow(left);
             
-            if(down.containsPiece() || down == null){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
@@ -117,7 +117,7 @@ public class Queen extends Piece
             Square right = b.getSquareRight(previous);
             Square down = b.getSquareBelow(right);
             
-            if(down.containsPiece() || down == null){
+            if(down == null || down.containsPiece()){
                 break;
             }
             

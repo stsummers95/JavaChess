@@ -22,7 +22,7 @@ public class Bishop extends Piece
             Square left = b.getSquareLeft(s);
             Square up = b.getSquareAbove(left);
             
-            if(up.containsPiece() || up == null){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -35,7 +35,7 @@ public class Bishop extends Piece
             Square right = b.getSquareRight(s);
             Square up = b.getSquareAbove(right);
             
-            if(up.containsPiece() || up == null){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -47,7 +47,7 @@ public class Bishop extends Piece
             Square left = b.getSquareLeft(s);
             Square down = b.getSquareBelow(left);
             
-            if(down.containsPiece() || down == null){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
@@ -59,14 +59,12 @@ public class Bishop extends Piece
             Square right = b.getSquareRight(s);
             Square down = b.getSquareBelow(right);
             
-            if(down.containsPiece() || down == null){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
             moves.add(down);
         }
-        
-        //castling
         
         return moves;
     }

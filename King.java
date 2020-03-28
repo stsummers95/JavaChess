@@ -21,50 +21,43 @@ public class King extends Piece
         Square down = b.getSquareBelow(s);
         
         //up
-        if(!up.containsPiece()){
+        if(up != null && !up.containsPiece()){
             moves.add(up);
         }
         
         //down
-        if(!down.containsPiece()){
+        if(down != null && !down.containsPiece()){
             moves.add(down);
         }
         
         //left
-        if(!b.getSquareLeft(s).containsPiece()){
+        if(b.getSquareLeft(s) != null && !b.getSquareLeft(s).containsPiece()){
             moves.add(b.getSquareLeft(s));
         }
         
         //right
-        if(!b.getSquareRight(s).containsPiece()){
+        if(b.getSquareRight(s) != null && !b.getSquareRight(s).containsPiece()){
             moves.add(b.getSquareRight(s));
         }
         
         //upper left
-        if(!b.getSquareLeft(up).containsPiece()){
+        if(b.getSquareLeft(up) != null && !b.getSquareLeft(up).containsPiece()){
             moves.add(b.getSquareLeft(up));
         }
         
         //upper right
-        if(!b.getSquareRight(up).containsPiece()){
+        if(b.getSquareRight(up) != null && !b.getSquareRight(up).containsPiece()){
             moves.add(b.getSquareRight(up));
         }
         
         //bottom left
-        if(!b.getSquareLeft(down).containsPiece()){
+        if(b.getSquareLeft(down) != null && !b.getSquareLeft(down).containsPiece()){
             moves.add(b.getSquareLeft(down));
         }
         
         //bottom right
-        if(!b.getSquareRight(down).containsPiece()){
+        if(b.getSquareRight(down) != null && !b.getSquareRight(down).containsPiece()){
             moves.add(b.getSquareRight(down));
-        }
-        
-        for(int i = 0; i < moves.size(); i++){
-            if(moves.get(i) == null){
-                moves.remove(moves.get(i));
-                i--;
-            }
         }
         
         //castling
