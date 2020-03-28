@@ -22,7 +22,7 @@ public class Queen extends Piece
         while(true){
             Square up = b.getSquareAbove(previous);
             
-            if(up.containsPiece()){ //TODO check if up is null (off board)
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -31,12 +31,11 @@ public class Queen extends Piece
         }
         
         //down
-        //TODO reset previous to original Square
-        //TODO make above changes to all loops
+        previous = s;
         while(true){
             Square down = b.getSquareBelow(previous);
             
-            if(down.containsPiece()){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
@@ -45,10 +44,11 @@ public class Queen extends Piece
         }
         
         //left
+        previous = s;
         while(true){
             Square left = b.getSquareLeft(previous);
             
-            if(left.containsPiece()){
+            if(left == null || left.containsPiece()){
                 break;
             }
             
@@ -57,10 +57,11 @@ public class Queen extends Piece
         }
         
         //right
+        previous = s;
         while(true){
             Square right = b.getSquareRight(previous);
             
-            if(right.containsPiece()){
+            if(right == null || right.containsPiece()){
                 break;
             }
             
@@ -69,51 +70,59 @@ public class Queen extends Piece
         }
         
         //upper left
+        previous = s;
         while(true){
-            Square left = b.getSquareLeft(s);
+            Square left = b.getSquareLeft(previous);
             Square up = b.getSquareAbove(left);
             
-            if(up.containsPiece()){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
             moves.add(up);
+            previous = up;
         }
         
         //upper right
+        previous = s;
         while(true){
-            Square right = b.getSquareRight(s);
+            Square right = b.getSquareRight(previous);
             Square up = b.getSquareAbove(right);
             
-            if(up.containsPiece()){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
             moves.add(up);
+            previous = up;
         }
         
         //bottom left
+        previous = s;
         while(true){
             Square left = b.getSquareLeft(s);
             Square down = b.getSquareBelow(left);
             
-            if(down.containsPiece()){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
             moves.add(down);
+            previous = down;
         }
         
         //bottom right
+        previous = s;
         while(true){
-            Square right = b.getSquareRight(s);
+            Square right = b.getSquareRight(previous);
             Square down = b.getSquareBelow(right);
             
-            if(down.containsPiece()){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
             moves.add(down);
+            previous = down;
         }
         
         return moves;

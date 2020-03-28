@@ -22,7 +22,7 @@ public class Bishop extends Piece
             Square left = b.getSquareLeft(s);
             Square up = b.getSquareAbove(left);
             
-            if(up.containsPiece()){ //TODO check if up is null (off board)
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -35,7 +35,7 @@ public class Bishop extends Piece
             Square right = b.getSquareRight(s);
             Square up = b.getSquareAbove(right);
             
-            if(up.containsPiece()){
+            if(up == null || up.containsPiece()){
                 break;
             }
             
@@ -47,7 +47,7 @@ public class Bishop extends Piece
             Square left = b.getSquareLeft(s);
             Square down = b.getSquareBelow(left);
             
-            if(down.containsPiece()){
+            if(down == null || down.containsPiece()){
                 break;
             }
             
@@ -59,7 +59,7 @@ public class Bishop extends Piece
             Square right = b.getSquareRight(s);
             Square down = b.getSquareBelow(right);
             
-            if(down.containsPiece()){
+            if(down == null || down.containsPiece()){
                 break;
             }
             

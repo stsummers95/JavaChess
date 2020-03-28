@@ -21,7 +21,7 @@ public class Pawn extends Piece
         ArrayList<Square> moves = new ArrayList<Square>();
 
         //up one
-        if(!b.getSquareAbove(s).containsPiece()){
+        if(b.getSquareAbove(s) != null && !b.getSquareAbove(s).containsPiece()){
             moves.add(b.getSquareAbove(s));
             
             //up two(if hasn't moved)
@@ -30,13 +30,13 @@ public class Pawn extends Piece
             }
         }
 
-        //en passant - can probably move to captures instead of moves
-
         return moves;
     }
 
     public ArrayList<Square> getAvailableCaptures()
     {
+        //en passant
+        
         return null;
     }
 }
