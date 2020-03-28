@@ -60,6 +60,8 @@ public class King extends Piece
             moves.add(b.getSquareRight(down));
         }
         
+        //castling
+        
         return moves;
     }
 
