@@ -174,6 +174,11 @@ public class GameBoard
     }
     
     public Square getSquareAbove(Square s){
+        if(s == null)
+        {
+            return null;
+        }
+        
         int row = 8 - s.getRank();
         int col = getFileNamesIndex(s.getFile());
         
@@ -188,6 +193,11 @@ public class GameBoard
     }
     
     public Square getSquareBelow(Square s){
+        if(s == null)
+        {
+            return null;
+        }
+        
         int row = 8 - s.getRank();
         int col = getFileNamesIndex(s.getFile());
         
@@ -202,6 +212,11 @@ public class GameBoard
     }
     
     public Square getSquareLeft(Square s){
+        if(s == null)
+        {
+            return null;
+        }
+        
         int row = 8 - s.getRank();
         int col = getFileNamesIndex(s.getFile());
         
@@ -216,6 +231,11 @@ public class GameBoard
     }
     
     public Square getSquareRight(Square s){
+        if(s == null)
+        {
+            return null;
+        }
+        
         int row = 8 - s.getRank();
         int col = getFileNamesIndex(s.getFile());
         
