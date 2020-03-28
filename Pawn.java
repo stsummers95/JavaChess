@@ -5,12 +5,15 @@ import java.util.ArrayList;
  */
 public class Pawn extends Piece
 {
+    boolean isFirstMove;
+    
     /**
      * Constructor for objects of class Pawn
      */
     public Pawn(String color)
     {
         super(color);
+        isFirstMove = true;
     }
 
     public ArrayList<Square> getAvailableMoves(Square s, GameBoard b)
@@ -22,12 +25,12 @@ public class Pawn extends Piece
             moves.add(b.getSquareAbove(s));
             
             //up two(if hasn't moved)
-            if(!b.getSquareAbove(moves.get(0)).containsPiece()){
+            if(isFirstMove && !b.getSquareAbove(moves.get(0)).containsPiece()){
                 moves.add(b.getSquareAbove(moves.get(0)));
             }
         }
 
-        //en passant
+        //en passant - can probably move to captures instead of moves
 
         return moves;
     }
