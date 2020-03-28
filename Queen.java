@@ -22,7 +22,7 @@ public class Queen extends Piece
         while(true){
             Square up = b.getSquareAbove(previous);
             
-            if(up.containsPiece()){
+            if(up.containsPiece()){ //TODO check if up is null (off board)
                 break;
             }
             
@@ -31,6 +31,8 @@ public class Queen extends Piece
         }
         
         //down
+        //TODO reset previous to original Square
+        //TODO make above changes to all loops
         while(true){
             Square down = b.getSquareBelow(previous);
             

@@ -22,11 +22,12 @@ public class Bishop extends Piece
             Square left = b.getSquareLeft(s);
             Square up = b.getSquareAbove(left);
             
-            if(up.containsPiece()){
+            if(up.containsPiece()){ //TODO check if up is null (off board)
                 break;
             }
             
-            moves.add(up);
+            moves.add(up); //TODO set recurring variable before looping
+            //TODO do the previous changes for each loop
         }
         
         //upper right
