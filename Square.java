@@ -37,4 +37,8 @@ public class Square
     public String getFile(){
         return file;
     }
+    
+    public Piece getPiece() {
+        return this.piece;
+    }
 }

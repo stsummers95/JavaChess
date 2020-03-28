@@ -168,9 +168,12 @@ public class GameBoard
         board[1][7].setPiece(topPawn8);
     }
 
-    public Piece getPieceAt(int rank, int file)
+    public Piece getPieceAt(int rank, String file)
     {
-        return null;
+        int row = 8 - rank;
+        int col = getFileNamesIndex(file);
+        
+        return board[row][col].getPiece();
     }
     
     public Square getSquareAbove(Square s){

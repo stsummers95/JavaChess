@@ -1,16 +1,19 @@
 import java.util.ArrayList;
 
 /**
- * Defines data members and methods of each pawn piece.
+ * Defines data members and methods of each king piece.
  */
 public class King extends Piece
 {
+    boolean hasMoved;
+    
     /**
      * Constructor for objects of class King
      */
     public King(String color)
     {
         super(color);
+        this.hasMoved = false;
     }
 
     public ArrayList<Square> getAvailableMoves(Square s, GameBoard b)
@@ -61,6 +64,33 @@ public class King extends Piece
         }
         
         //castling
+        if(!this.hasMoved)
+        {
+            if(!b.getSquareRight(s).containsPiece() &&
+                !b.getSquareRight(b.getSquareRight(s)).containsPiece() &&
+                b.getSquareRight(b.getSquareRight(b.getSquareRight(s))).getPiece() instanceof Rook)
+                {
+                Rook rook = (Rook)(b.getSquareRight(b.getSquareRight(b.getSquareRight(s))).getPiece());
+                if(!rook.hasMoved())
+                {
+                    //Must make sure king is not currently in check,
+                    //moving through check, or moving into check.
+                    moves.add(b.getSquareRight(b.getSquareRight(s)));
+                }
+            }
+            if(!b.getSquareLeft(s).containsPiece() &&
+                !b.getSquareLeft(b.getSquareLeft(s)).containsPiece() &&
+                b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(s)))).getPiece() instanceof Rook)
+                {
+                Rook rook = (Rook)(b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(s)))).getPiece());
+                if(!rook.hasMoved())
+                {
+                    //Must make sure king is not currently in check,
+                    //moving through check, or moving into check.
+                    moves.add(b.getSquareLeft(b.getSquareLeft(s)));
+                }
+            }
+        }
         
         return moves;
     }

@@ -5,12 +5,20 @@ import java.util.ArrayList;
  */
 public class Rook extends Piece
 {
+    boolean moved;
+    
     /**
      * Constructor for objects of class Rook
      */
     public Rook(String color)
     {
         super(color);
+        moved = false;
+    }
+    
+    public boolean hasMoved()
+    {
+        return this.moved;
     }
 
     public ArrayList<Square> getAvailableMoves(Square s, GameBoard b)
