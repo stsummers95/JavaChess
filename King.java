@@ -21,10 +21,10 @@ public class King extends Piece
         Square down = b.getSquareBelow(s);
         
         //up
-        if(!up.containsPiece()){ //TODO check if up is null (off board)
+        if(!up.containsPiece()){
             moves.add(up);
         }
-        //TODO make above change to each loop
+        
         //down
         if(!down.containsPiece()){
             moves.add(down);
@@ -58,6 +58,13 @@ public class King extends Piece
         //bottom right
         if(!b.getSquareRight(down).containsPiece()){
             moves.add(b.getSquareRight(down));
+        }
+        
+        for(int i = 0; i < moves.size(); i++){
+            if(moves.get(i) == null){
+                moves.remove(moves.get(i));
+                i--;
+            }
         }
         
         //castling

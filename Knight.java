@@ -68,6 +68,13 @@ public class Knight extends Piece
         if(!b.getSquareBelow(left2).containsPiece()){
             moves.add(b.getSquareBelow(left2));
         }
+        
+        for(int i = 0; i < moves.size(); i++){
+            if(moves.get(i) == null){
+                moves.remove(moves.get(i));
+                i--;
+            }
+        }
 
         return moves;
     }

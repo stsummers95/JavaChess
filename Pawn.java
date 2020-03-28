@@ -29,14 +29,21 @@ public class Pawn extends Piece
                 moves.add(b.getSquareAbove(moves.get(0)));
             }
         }
-
-        //en passant - can probably move to captures instead of moves
+        
+        for(int i = 0; i < moves.size(); i++){
+            if(moves.get(i) == null){
+                moves.remove(moves.get(i));
+                i--;
+            }
+        }
 
         return moves;
     }
 
     public ArrayList<Square> getAvailableCaptures()
     {
+        //en passant
+        
         return null;
     }
 }

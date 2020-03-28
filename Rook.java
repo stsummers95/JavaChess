@@ -22,7 +22,7 @@ public class Rook extends Piece
         while(true){
             Square up = b.getSquareAbove(previous);
             
-            if(up.containsPiece()){ //TODO check if up is null (off board)
+            if(up.containsPiece() || up == null){
                 break;
             }
             
@@ -31,12 +31,11 @@ public class Rook extends Piece
         }
         
         //down
-        //TODO reset previous to original Square
-        //TODO make previous changes for all loops
+        previous = s;
         while(true){
             Square down = b.getSquareBelow(previous);
             
-            if(down.containsPiece()){
+            if(down.containsPiece() || down == null){
                 break;
             }
             
@@ -45,10 +44,11 @@ public class Rook extends Piece
         }
         
         //left
+        previous = s;
         while(true){
             Square left = b.getSquareLeft(previous);
             
-            if(left.containsPiece()){
+            if(left.containsPiece() || left == null){
                 break;
             }
             
@@ -57,10 +57,11 @@ public class Rook extends Piece
         }
         
         //right
+        previous = s;
         while(true){
             Square right = b.getSquareRight(previous);
             
-            if(right.containsPiece()){
+            if(right.containsPiece() || right == null){
                 break;
             }
             
