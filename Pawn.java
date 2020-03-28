@@ -5,24 +5,30 @@ import java.util.ArrayList;
  */
 public class Pawn extends Piece
 {
-        /**
+    /**
      * Constructor for objects of class Pawn
      */
     public Pawn(String color)
     {
         super(color);
     }
-    
-    public ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b)
+
+    public ArrayList<Square> getAvailableMoves(Square s, GameBoard b)
     {
         ArrayList<Square> moves = new ArrayList<Square>();
-        
+
         //up one
-        
-        //up two (if hasn't moved)
-        
+        if(!b.getSquareAbove(s).containsPiece()){
+            moves.add(b.getSquareAbove(s));
+            
+            //up two(if hasn't moved)
+            if(!b.getSquareAbove(moves.get(0)).containsPiece()){
+                moves.add(b.getSquareAbove(moves.get(0)));
+            }
+        }
+
         //en passant
-        
+
         return moves;
     }
 

@@ -13,17 +13,58 @@ public class Rook extends Piece
         super(color);
     }
 
-    public ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b)
+    public ArrayList<Square> getAvailableMoves(Square s, GameBoard b)
     {
         ArrayList<Square> moves = new ArrayList<Square>();
         
         //up
+        Square previous = s;
+        while(true){
+            Square up = b.getSquareAbove(previous);
+            
+            if(up.containsPiece()){
+                break;
+            }
+            
+            moves.add(up);
+            previous = up;
+        }
         
         //down
+        while(true){
+            Square down = b.getSquareBelow(previous);
+            
+            if(down.containsPiece()){
+                break;
+            }
+            
+            moves.add(down);
+            previous = down;
+        }
         
         //left
+        while(true){
+            Square left = b.getSquareLeft(previous);
+            
+            if(left.containsPiece()){
+                break;
+            }
+            
+            moves.add(left);
+            previous = left;
+        }
         
         //right
+        while(true){
+            Square right = b.getSquareRight(previous);
+            
+            if(right.containsPiece()){
+                break;
+            }
+            
+            moves.add(right);
+            previous = right;
+        }
         
         return moves;
     }

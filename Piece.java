@@ -13,7 +13,7 @@ public abstract class Piece
         this.color = color;
     }
     
-    public abstract ArrayList<Square> getAvailableMoves(Square s, GameBoard[][] b);
+    public abstract ArrayList<Square> getAvailableMoves(Square s, GameBoard b);
     
     public abstract ArrayList<Square> getAvailableCaptures();
 }
