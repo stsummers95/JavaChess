@@ -20,6 +20,8 @@ public class Pawn extends Piece
     {
         ArrayList<Square> moves = new ArrayList<Square>();
 
+        //TODO looking above only applies to white - add section to 
+        //apply to black (look below to move)
         //up one
         if(b.getSquareAbove(s) != null && !b.getSquareAbove(s).containsPiece()){
             moves.add(b.getSquareAbove(s));
@@ -35,6 +37,7 @@ public class Pawn extends Piece
 
     public ArrayList<Square> getAvailableCaptures()
     {
+        //regular capture
         //en passant
         
         return null;

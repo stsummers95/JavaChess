@@ -80,6 +80,7 @@ public class King extends Piece
             }
             if(!b.getSquareLeft(s).containsPiece() &&
                 !b.getSquareLeft(b.getSquareLeft(s)).containsPiece() &&
+                !b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(s))).containsPiece() &&
                 b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(s)))).getPiece() instanceof Rook)
                 {
                 Rook rook = (Rook)(b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(b.getSquareLeft(s)))).getPiece());

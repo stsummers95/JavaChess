@@ -61,11 +61,11 @@ public class GameBoard
     public GameBoard()
     {
         board = new Square[8][8];
-        for(int i = 7; i >= 0; i--)
+        for(int i = 0; i < 8; i++)
         {
             for(int j = 0; j < 8; j++)
             {
-                board[i][j] = new Square(i, fileNames[j]);
+                board[i][j] = new Square(8-i, fileNames[j]);
             }
         }
         

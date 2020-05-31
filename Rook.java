@@ -77,8 +77,6 @@ public class Rook extends Piece
             previous = right;
         }
         
-        //castling
-        
         return moves;
     }
 
