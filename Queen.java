@@ -128,7 +128,7 @@ public class Queen extends Piece
         return moves;
     }
 
-    public ArrayList<Square> getAvailableCaptures()
+    public ArrayList<Square> getAvailableCaptures(Square s, GameBoard b)
     {
         return null;
     }

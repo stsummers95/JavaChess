@@ -43,9 +43,21 @@ public class Pawn extends Piece
         return moves;
     }
 
-    public ArrayList<Square> getAvailableCaptures()
+    public ArrayList<Square> getAvailableCaptures(Square s, GameBoard b)
     {
+        ArrayList<Square> captures = new ArrayList<Square>();
+        
         //regular capture
+        //white
+        if(this.color == "white" && b.getSquareAbove(s) != null) {
+            Square above = b.getSquareAbove(s);
+            if(b.getSquareLeft(above) != null && b.getSquareLeft(above).containsPiece() && b.getSquareLeft(above).getPiece().getColor() == "black") {
+                captures.add(b.getSquareLeft(above));
+            }
+            if(b.getSquareRight(above) != null && b.getSquareRight(above).containsPiece() && b.getSquareRight(above).getPiece().getColor() == "black") {
+                captures.add(b.getSquareRight(above));
+            }
+        }
         //en passant
         
         return null;

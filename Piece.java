@@ -19,5 +19,5 @@ public abstract class Piece
     
     public abstract ArrayList<Square> getAvailableMoves(Square s, GameBoard b);
     
-    public abstract ArrayList<Square> getAvailableCaptures();
+    public abstract ArrayList<Square> getAvailableCaptures(Square s, GameBoard b);
 }
