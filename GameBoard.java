@@ -342,4 +342,17 @@ public class GameBoard
             return 7;
         }
     }
+    
+    public void movePiece(Square oldSquare, Square newSquare) {
+        Piece piece = oldSquare.getPiece();
+        oldSquare.setPiece(null);
+        newSquare.setPiece(piece);
+    }
+    
+    public void capturePiece(Square attackSquare, Square captureSquare) {
+        Piece attacker = attackSquare.getPiece();
+        attackSquare.setPiece(null);
+        captureSquare.setPiece(null);
+        captureSquare.setPiece(attacker);
+    }
 }
