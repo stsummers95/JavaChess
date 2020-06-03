@@ -195,6 +195,22 @@ public class GameBoard
         }
     }
     
+    public Square getSquareAbove(Square s, int n) {
+        if(s == null) {
+            return null;
+        }
+        
+        Square temp = s;
+        for(int i = 0; i < n; i++) {
+            temp = getSquareAbove(temp);
+            if(temp == null) {
+                return null;
+            }
+        }
+        
+        return temp;
+    }
+    
     public Square getSquareBelow(Square s){
         if(s == null)
         {
@@ -212,6 +228,22 @@ public class GameBoard
         {
             return null;
         }
+    }
+    
+    public Square getSquareBelow(Square s, int n) {
+        if(s == null) {
+            return null;
+        }
+        
+        Square temp = s;
+        for(int i = 0; i < n; i++) {
+            temp = getSquareBelow(temp);
+            if(temp == null) {
+                return null;
+            }
+        }
+        
+        return temp;
     }
     
     public Square getSquareLeft(Square s){
@@ -233,6 +265,22 @@ public class GameBoard
         }
     }
     
+    public Square getSquareLeft(Square s, int n) {
+        if(s == null) {
+            return null;
+        }
+        
+        Square temp = s;
+        for(int i = 0; i < n; i++) {
+            temp = getSquareLeft(temp);
+            if(temp == null) {
+                return null;
+            }
+        }
+        
+        return temp;
+    }
+    
     public Square getSquareRight(Square s){
         if(s == null)
         {
@@ -250,6 +298,22 @@ public class GameBoard
         {
             return null;
         }
+    }
+    
+    public Square getSquareRight(Square s, int n) {
+        if(s == null) {
+            return null;
+        }
+        
+        Square temp = s;
+        for(int i = 0; i < n; i++) {
+            temp = getSquareRight(temp);
+            if(temp == null) {
+                return null;
+            }
+        }
+        
+        return temp;
     }
     
     public int getFileNamesIndex(String f){
