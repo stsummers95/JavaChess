@@ -9,5 +9,7 @@ public class Driver
     {
         //Create game object
         //Start game
+        
+        ChessBoardGUI board = new ChessBoardGUI();
     }
 }
