@@ -68,7 +68,7 @@ public class Pawn extends Piece
                 captures.add(b.getSquareRight(below));
             }
         }
-        //en passant
+        //TODO: en passant
         
         return captures;
     }

@@ -130,6 +130,120 @@ public class Queen extends Piece
 
     public ArrayList<Square> getAvailableCaptures(Square s, GameBoard b)
     {
-        return null;
+        ArrayList<Square> captures = new ArrayList<Square>();
+        
+        Square temp = s;
+        while(true) {
+            temp = b.getSquareAbove(temp);
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareBelow(temp);
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareLeft(temp);
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareRight(temp);
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareLeft(b.getSquareAbove(temp));
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareRight(b.getSquareAbove(temp));
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareLeft(b.getSquareBelow(temp));
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        temp = s;
+        while(true) {
+            temp = b.getSquareRight(b.getSquareBelow(temp));
+            if(temp == null) {
+                break;
+            }
+            else if(temp.containsPiece()) {
+                if(!temp.getPiece().getColor().equals(this.color)) {
+                    captures.add(temp);
+                }
+                break;
+            }
+        }
+        
+        return captures;
     }
 }

@@ -76,8 +76,46 @@ public class Knight extends Piece
     {
         ArrayList<Square> captures = new ArrayList<Square>();
         
+        Square two_above = b.getSquareAbove(s, 2);
+        if(two_above != null){
+            if(b.getSquareLeft(two_above) != null && b.getSquareLeft(two_above).containsPiece() && !b.getSquareLeft(two_above).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareLeft(two_above));
+            }
+            if(b.getSquareRight(two_above) != null && b.getSquareRight(two_above).containsPiece() && !b.getSquareRight(two_above).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareRight(two_above));
+            }
+        }
         
+        Square two_below = b.getSquareBelow(s, 2);
+        if(two_below != null){
+            if(b.getSquareLeft(two_below) != null && b.getSquareLeft(two_below).containsPiece() && !b.getSquareLeft(two_below).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareLeft(two_below));
+            }
+            if(b.getSquareRight(two_below) != null && b.getSquareRight(two_below).containsPiece() && !b.getSquareRight(two_below).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareRight(two_below));
+            }
+        }
         
-        return null;
+        Square two_left = b.getSquareLeft(s, 2);
+        if(two_left != null) {
+            if(b.getSquareAbove(two_left) != null && b.getSquareAbove(two_left).containsPiece() && !b.getSquareAbove(two_left).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareAbove(two_left));
+            }
+            if(b.getSquareBelow(two_left) != null && b.getSquareBelow(two_left).containsPiece() && !b.getSquareBelow(two_left).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareBelow(two_left));
+            }
+        }
+        
+        Square two_right = b.getSquareRight(s, 2);
+        if(two_right != null) {
+            if(b.getSquareAbove(two_right) != null && b.getSquareAbove(two_right).containsPiece() && !b.getSquareAbove(two_right).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareAbove(two_right));
+            }
+            if(b.getSquareBelow(two_right) != null && b.getSquareBelow(two_right).containsPiece() && !b.getSquareBelow(two_right).getPiece().getColor().equals(this.color)) {
+                captures.add(b.getSquareBelow(two_right));
+            }
+        }
+        
+        return captures;
     }
 }
