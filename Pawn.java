@@ -20,18 +20,26 @@ public class Pawn extends Piece
     {
         ArrayList<Square> moves = new ArrayList<Square>();
 
-        //TODO looking above only applies to white - add section to 
-        //apply to black (look below to move)
-        //up one
-        if(b.getSquareAbove(s) != null && !b.getSquareAbove(s).containsPiece()){
+        
+        //white
+        if(this.color == "white" && b.getSquareAbove(s) != null && !b.getSquareAbove(s).containsPiece()) {
             moves.add(b.getSquareAbove(s));
             
-            //up two(if hasn't moved)
-            if(isFirstMove && !b.getSquareAbove(moves.get(0)).containsPiece()){
+            //up two (if hasn't moved)
+            if(this.isFirstMove && !b.getSquareAbove(moves.get(0)).containsPiece()) {
                 moves.add(b.getSquareAbove(moves.get(0)));
             }
         }
-
+        //black
+        else if(this.color == "black" && b.getSquareBelow(s) != null && !b.getSquareBelow(s).containsPiece()) {
+            moves.add(b.getSquareBelow(s));
+            
+            //down two (if hasn't moved)
+            if(this.isFirstMove && !b.getSquareBelow(moves.get(0)).containsPiece()) {
+                moves.add(b.getSquareBelow(moves.get(0)));
+            }
+        }
+            
         return moves;
     }
 
