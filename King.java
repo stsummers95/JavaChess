@@ -98,6 +98,34 @@ public class King extends Piece
 
     public ArrayList<Square> getAvailableCaptures(Square s, GameBoard b)
     {
-        return null;
+        ArrayList<Square> captures = new ArrayList<Square>();
+        
+        if(b.getSquareAbove(s) != null && b.getSquareAbove(s).containsPiece() && !b.getSquareAbove(s).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareAbove(s));
+        }
+        if(b.getSquareBelow(s) != null && b.getSquareBelow(s).containsPiece() && !b.getSquareBelow(s).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareBelow(s));
+        }
+        if(b.getSquareLeft(s) != null && b.getSquareLeft(s).containsPiece() && !b.getSquareLeft(s).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareLeft(s));
+        }
+        if(b.getSquareRight(s) != null && b.getSquareRight(s).containsPiece() && !b.getSquareRight(s).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareRight(s));
+        }
+        
+        if(b.getSquareLeft(b.getSquareAbove(s)) != null && b.getSquareLeft(b.getSquareAbove(s)).containsPiece() && !b.getSquareLeft(b.getSquareAbove(s)).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareLeft(b.getSquareAbove(s)));
+        }
+        if(b.getSquareRight(b.getSquareAbove(s)) != null && b.getSquareRight(b.getSquareAbove(s)).containsPiece() && !b.getSquareRight(b.getSquareAbove(s)).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareRight(b.getSquareAbove(s)));
+        }
+        if(b.getSquareLeft(b.getSquareBelow(s)) != null && b.getSquareLeft(b.getSquareBelow(s)).containsPiece() && !b.getSquareLeft(b.getSquareBelow(s)).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareLeft(b.getSquareBelow(s)));
+        }
+        if(b.getSquareLeft(b.getSquareAbove(s)) != null && b.getSquareRight(b.getSquareBelow(s)).containsPiece() && !b.getSquareRight(b.getSquareBelow(s)).getPiece().getColor().equals(this.color)) {
+            captures.add(b.getSquareRight(b.getSquareBelow(s)));
+        }
+        
+        return captures;
     }
 }
