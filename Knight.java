@@ -74,6 +74,10 @@ public class Knight extends Piece
 
     public ArrayList<Square> getAvailableCaptures(Square s, GameBoard b)
     {
+        ArrayList<Square> captures = new ArrayList<Square>();
+        
+        
+        
         return null;
     }
 }

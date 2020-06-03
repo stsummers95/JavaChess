@@ -58,8 +58,18 @@ public class Pawn extends Piece
                 captures.add(b.getSquareRight(above));
             }
         }
+        //black
+        else if(this.color == "black" && b.getSquareBelow(s) != null) {
+            Square below = b.getSquareBelow(s);
+            if(b.getSquareLeft(below) != null && b.getSquareLeft(below).containsPiece() && b.getSquareLeft(below).getPiece().getColor() == "white") {
+                captures.add(b.getSquareLeft(below));
+            }
+            if(b.getSquareRight(below) != null && b.getSquareRight(below).containsPiece() && b.getSquareRight(below).getPiece().getColor() == "white") {
+                captures.add(b.getSquareRight(below));
+            }
+        }
         //en passant
         
-        return null;
+        return captures;
     }
 }
